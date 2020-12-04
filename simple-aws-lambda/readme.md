@@ -1,27 +1,16 @@
 
-Install and configure
+# Install and configure
 
-AWS cli
+* Node
+* NPM
+* AWS cli
+* Serverless framework
+$ npm install -g serverless
 
+## Config AWS Credentials
 
-Serverless framework
-
-Node
-
-NPM
-
-npm install -g serverless
-
-
-1 - Config credentials
 $ serverless config credentials --provider aws --key <AWSAccessKeyId> --secret <AWSSecretKey> --profile serverless-admin
 
+# Referências
 
-
-
-
-
-
-Referências
-
-https://www.serverless.com/framework/docs/getting-started/
+[https://www.serverless.com/framework/docs/getting-started/](https://www.serverless.com/framework/docs/getting-started/)
