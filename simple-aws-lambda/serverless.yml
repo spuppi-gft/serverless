@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: java11
   profile: serverless-admin
-  stage: dev
+  stage: api
   region: us-east-1
   timeout: 10
   memorySize: 1024
@@ -26,11 +26,11 @@ package:
 
 functions:
   simpleHttp:
-    handler: com.spuppi.aws.LambdaFunction
+    handler: com.spuppi.aws.Function
     events:
       - http:
           method: POST
-          path: /simple
+          path: /simplehttp
           request:
             template:
               application/json: $input.json('$')

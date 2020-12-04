@@ -74,7 +74,7 @@
     "SimpleHttpLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/simple-aws-lambda-dev-simpleHttp"
+        "LogGroupName": "/aws/lambda/simple-aws-lambda-api-simpleHttp"
       }
     },
     "IamRoleLambdaExecution": {
@@ -103,7 +103,7 @@
                 "-",
                 [
                   "simple-aws-lambda",
-                  "dev",
+                  "api",
                   "lambda"
                 ]
               ]
@@ -119,7 +119,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/simple-aws-lambda-dev*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/simple-aws-lambda-api*:*"
                     }
                   ]
                 },
@@ -130,7 +130,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/simple-aws-lambda-dev*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/simple-aws-lambda-api*:*:*"
                     }
                   ]
                 },
@@ -165,7 +165,7 @@
             "-",
             [
               "simple-aws-lambda",
-              "dev",
+              "api",
               {
                 "Ref": "AWS::Region"
               },
@@ -182,10 +182,10 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/simple-aws-lambda/dev/1607040269650-2020-12-04T00:04:29.650Z/simple-aws-lambda.jar"
+          "S3Key": "serverless/simple-aws-lambda/api/1607105657610-2020-12-04T18:14:17.610Z/simple-aws-lambda.jar"
         },
-        "FunctionName": "simple-aws-lambda-dev-simpleHttp",
-        "Handler": "com.spuppi.aws.LambdaFunction",
+        "FunctionName": "simple-aws-lambda-api-simpleHttp",
+        "Handler": "com.spuppi.aws.Function",
         "MemorySize": 1024,
         "Role": {
           "Fn::GetAtt": [
@@ -200,20 +200,20 @@
         "SimpleHttpLogGroup"
       ]
     },
-    "SimpleHttpLambdaVersionz9P5dVdExNeVq2CwRHCNYjYsP13po8vScjcERi8": {
+    "SimpleHttpLambdaVersionUx0CYjFENLnSYWsK5C43JwKgB9AjcUp9vFVZ87KJl4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SimpleHttpLambdaFunction"
         },
-        "CodeSha256": "wMOuM/2KNm/PSPNHoEzJ/k6JeD4LhGZ52FumcpkKnxQ="
+        "CodeSha256": "STopVVoTkLfOJa5nJ2LQE+9e5xV6epwS2hsh63YggJ8="
       }
     },
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
-        "Name": "simple-aws-lambda-dev",
+        "Name": "simple-aws-lambda-api",
         "EndpointConfiguration": {
           "Types": [
             "EDGE"
@@ -222,7 +222,7 @@
         "Policy": ""
       }
     },
-    "ApiGatewayResourceSimple": {
+    "ApiGatewayResourceSimplehttp": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
@@ -231,19 +231,19 @@
             "RootResourceId"
           ]
         },
-        "PathPart": "simple",
+        "PathPart": "simplehttp",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayMethodSimplePost": {
+    "ApiGatewayMethodSimplehttpPost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "POST",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSimple"
+          "Ref": "ApiGatewayResourceSimplehttp"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -280,16 +280,16 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1607040268569": {
+    "ApiGatewayDeployment1607105656331": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         },
-        "StageName": "dev"
+        "StageName": "api"
       },
       "DependsOn": [
-        "ApiGatewayMethodSimplePost"
+        "ApiGatewayMethodSimplehttpPost"
       ]
     },
     "SimpleHttpLambdaPermissionApiGateway": {
@@ -339,7 +339,7 @@
     "SimpleHttpLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SimpleHttpLambdaVersionz9P5dVdExNeVq2CwRHCNYjYsP13po8vScjcERi8"
+        "Ref": "SimpleHttpLambdaVersionUx0CYjFENLnSYWsK5C43JwKgB9AjcUp9vFVZ87KJl4"
       }
     },
     "ServiceEndpoint": {
@@ -360,7 +360,7 @@
             {
               "Ref": "AWS::URLSuffix"
             },
-            "/dev"
+            "/api"
           ]
         ]
       }
