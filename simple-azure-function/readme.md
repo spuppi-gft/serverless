@@ -32,7 +32,7 @@ $ mvn clean package
 $ mvn azure-functions:run  
 $ mvn azure-functions:deploy  
   
-Referência
+# Referência
 
 [https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-java?WT.mc_id=-youtube-jogiles&tabs=bash%2Cazure-cli%2Cbrowser](
 https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-java?WT.mc_id=-youtube-jogiles&tabs=bash%2Cazure-cli%2Cbrowser)
