@@ -3,16 +3,16 @@
 * The Azure Functions Core Tools version 3.x..
 * The Azure CLI version 2.4 or later.
 
-1. Login to Azure
+1. Login to Azure  
 $ az login -u <username> -p <password>
 
-2. Set Azure Subscription for which to create Service Principal
+2. Set Azure Subscription for which to create Service Principal  
 $ az account set -s <subscription-id>
 
-3. Create SP with unique name
+3. Create SP with unique name  
 $ az ad sp create-for-rbac --name <my-unique-name>
 
-* This will yield something like:
+* This will yield something like:  
 {  
   "appId": "<servicePrincipalId>",  
   "displayName": "<name>",  
