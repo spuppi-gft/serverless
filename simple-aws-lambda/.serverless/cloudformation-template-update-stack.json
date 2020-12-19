@@ -182,7 +182,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/simple-aws-lambda/api/1607105657610-2020-12-04T18:14:17.610Z/simple-aws-lambda.jar"
+          "S3Key": "serverless/simple-aws-lambda/api/1608299731335-2020-12-18T13:55:31.335Z/simple-aws-lambda.jar"
         },
         "FunctionName": "simple-aws-lambda-api-simpleHttp",
         "Handler": "com.spuppi.aws.Function",
@@ -200,14 +200,14 @@
         "SimpleHttpLogGroup"
       ]
     },
-    "SimpleHttpLambdaVersionUx0CYjFENLnSYWsK5C43JwKgB9AjcUp9vFVZ87KJl4": {
+    "SimpleHttpLambdaVersionkEXBdU7NjoYF4XwTMpGYOvcQhU9E84PdXV61ucTZkGQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SimpleHttpLambdaFunction"
         },
-        "CodeSha256": "STopVVoTkLfOJa5nJ2LQE+9e5xV6epwS2hsh63YggJ8="
+        "CodeSha256": "EhawX+RDEWM3BZaStk/6eJ7be98GNivrrtc4TO04w6g="
       }
     },
     "ApiGatewayRestApi": {
@@ -280,7 +280,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1607105656331": {
+    "ApiGatewayDeployment1608299730308": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -339,7 +339,7 @@
     "SimpleHttpLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SimpleHttpLambdaVersionUx0CYjFENLnSYWsK5C43JwKgB9AjcUp9vFVZ87KJl4"
+        "Ref": "SimpleHttpLambdaVersionkEXBdU7NjoYF4XwTMpGYOvcQhU9E84PdXV61ucTZkGQ"
       }
     },
     "ServiceEndpoint": {
