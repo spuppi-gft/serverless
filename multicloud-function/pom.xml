@@ -26,7 +26,7 @@
 		<aws-lambda-java-events.version>3.1.0</aws-lambda-java-events.version>
 		<azure.functions.maven.plugin.version>1.9.0</azure.functions.maven.plugin.version>
 		<azure.functions.java.library.version>1.4.0</azure.functions.java.library.version>
-		<functionAppName>simple-azure-function-20201203105226696</functionAppName>
+		<functionAppName>ArsenalMulticloudFunction</functionAppName>
 		<functionAppRegion>westus</functionAppRegion>
 		<functionResourceGroup>arsenal.functions</functionResourceGroup>
 		<stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
@@ -191,6 +191,7 @@
 									<directory>${project.basedir}/src/main/resources</directory>
 									<includes>
 										<include>host.json</include>
+										<include>local.settings.json</include>
 										<include>function.json</include>
 									</includes>
 								</resource>

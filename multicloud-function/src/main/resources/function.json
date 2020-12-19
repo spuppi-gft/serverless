@@ -1,0 +1,15 @@
+{
+  "scriptFile" : "../multicloud-function-0.0.1-SNAPSHOT.jar",
+  "entryPoint" : "com.santander.arsenal.serverless.multicloudfunction.multicloud.azure.HttpResponseMessageAzure.httpResponseMessage",
+  "bindings" : [ {
+    "type" : "httpTrigger",
+    "direction" : "in",
+    "name" : "ArsenalMulticloudFunction",
+    "methods" : [ "POST" ],
+    "authLevel" : "ANONYMOUS"
+  }, {
+    "type" : "http",
+    "direction" : "out",
+    "name" : "$return"
+  } ]
+}
