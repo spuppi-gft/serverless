@@ -1,0 +1,36 @@
+service: ArsenalMulticloudFunction
+
+provider:
+  name: aws
+  runtime: java8
+  profile: serverless-admin
+  stage: api
+  region: us-east-1
+  timeout: 10
+  memorySize: 1024
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 's3:*'
+      Resource:
+        - 'arn:aws:s3:::${self:custom.myBucket}/*'
+        - !Join ['', ['arn:aws:s3:::', !Ref ServerlessDeploymentBucket, '/*']]
+  apiGateway:
+    shouldStartNameWithService: true
+
+custom:
+  myBucket: serverless-bucket-puppi
+
+package:
+  artifact: target/multicloud-function-0.0.1-SNAPSHOT.jar
+
+functions:
+  ArsenalMulticloudFunction:
+    handler: com.santander.arsenal.serverless.multicloudfunction.multicloud.aws.HttpResponseMessageAws
+    events:
+      - http:
+          method: POST
+          path: /ArsenalMulticloudFunction
+          request:
+            template:
+              application/json: $input.json('$')

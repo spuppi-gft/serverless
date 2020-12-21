@@ -91,7 +91,7 @@
         <configuration>
           <appName>${functionAppName}</appName>
           <resourceGroup>${functionResourceGroup}</resourceGroup>
-          <appServicePlanName>java-functions-app-service-plan</appServicePlanName>
+          <appServicePlanName>${appServicePlanName}</appServicePlanName>
           <region>${functionAppRegion}</region>
           <runtime>
             <os>windows</os>
@@ -252,6 +252,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <azure.functions.java.library.version>1.4.0</azure.functions.java.library.version>
     <functionAppRegion>westus</functionAppRegion>
+    <appServicePlanName>java-functions-app-service-plan</appServicePlanName>
     <aws-lambda-java-events.version>3.1.0</aws-lambda-java-events.version>
     <azure.functions.maven.plugin.version>1.9.0</azure.functions.maven.plugin.version>
   </properties>

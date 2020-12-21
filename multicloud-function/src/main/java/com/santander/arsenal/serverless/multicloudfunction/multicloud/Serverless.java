@@ -5,11 +5,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.ArsenalFunction;
-import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.request.ArsenalHttpRequest;
+import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.ArsenalHttpMessage;
 
 public class Serverless {
 		
-	public Object ArsenalFunctionScan(Object obj, ArsenalHttpRequest request, Object context) {
+	public ArsenalHttpMessage ArsenalFunctionScan(Object obj, ArsenalHttpMessage request, Object context) {
 		
 		Object response = null;
 		
@@ -31,7 +31,7 @@ public class Serverless {
 			}
 		}
 		
-		return response;
+		return (ArsenalHttpMessage) response;
 		
 	}
 

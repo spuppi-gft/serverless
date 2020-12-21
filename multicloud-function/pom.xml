@@ -29,6 +29,7 @@
 		<functionAppName>ArsenalMulticloudFunction</functionAppName>
 		<functionAppRegion>westus</functionAppRegion>
 		<functionResourceGroup>arsenal.functions</functionResourceGroup>
+		<appServicePlanName>java-functions-app-service-plan</appServicePlanName>
 		<stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
 	</properties>
 
@@ -151,7 +152,7 @@
 				<configuration>
 					<appName>${functionAppName}</appName>
 					<resourceGroup>${functionResourceGroup}</resourceGroup>
-					<appServicePlanName>java-functions-app-service-plan</appServicePlanName>
+					<appServicePlanName>${appServicePlanName}</appServicePlanName>
 					<region>${functionAppRegion}</region>
 					<runtime>
 						<os>windows</os>
