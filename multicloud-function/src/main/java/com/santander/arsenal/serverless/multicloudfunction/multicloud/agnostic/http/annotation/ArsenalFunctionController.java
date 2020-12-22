@@ -1,4 +1,4 @@
-package com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic;
+package com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

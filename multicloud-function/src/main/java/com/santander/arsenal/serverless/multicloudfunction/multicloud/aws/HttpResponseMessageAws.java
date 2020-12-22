@@ -6,6 +6,7 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.Serverless;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.ArsenalHttpMessage;
+import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.HttpMethod;
 
 public class HttpResponseMessageAws implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent>{
 
@@ -16,7 +17,7 @@ public class HttpResponseMessageAws implements RequestHandler<APIGatewayProxyReq
 		context.getLogger().log("Java HTTP trigger processed a request.");
 
 		Serverless s = new Serverless();
-		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(request.getHttpMethod())
+		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(HttpMethod.value(request.getHttpMethod()))
 				.headers(request.getHeaders())
 				.body(request.getBody())
 				.build(), context);

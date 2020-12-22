@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.Serverless;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.ArsenalHttpMessage;
+import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.HttpMethod;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.HttpStatus;
 
 @SpringBootApplication
@@ -32,14 +33,13 @@ public class MulticloudFunctionApplication {
 		//				.body("body")
 		//				.build(), null);
 
-		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder("POST")
+		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(HttpMethod.DELETE)
 				.header("key", "value")
-				.header("ArsenalFunction", "AtualizarUsuario")
 				.body("body")
 				.build(), null);
 
 
-		//System.out.println(gson.toJson(gson.toJsonTree(response)));
+		System.out.println(gson.toJson(gson.toJsonTree(response)));
 
 	}
 

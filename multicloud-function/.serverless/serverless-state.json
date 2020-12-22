@@ -206,7 +206,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/ArsenalMulticloudFunction/api/1608652068595-2020-12-22T15:47:48.595Z/multicloud-function-0.0.1-SNAPSHOT.jar"
+                "S3Key": "serverless/ArsenalMulticloudFunction/api/1608664676834-2020-12-22T19:17:56.834Z/multicloud-function-0.0.1-SNAPSHOT.jar"
               },
               "FunctionName": "ArsenalMulticloudFunction-api-ArsenalMulticloudFunction",
               "Handler": "com.santander.arsenal.serverless.multicloudfunction.multicloud.aws.HttpResponseMessageAws",
@@ -224,14 +224,14 @@
               "ArsenalMulticloudFunctionLogGroup"
             ]
           },
-          "ArsenalMulticloudFunctionLambdaVersionoVVazFrEwSSXovb0x0PJSKkH29Sh1xNG3sYunlu9OSo": {
+          "ArsenalMulticloudFunctionLambdaVersiong3S8rngKTa56INph2HoN0BbKK4D3scYhm8S8j8oDx8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ArsenalMulticloudFunctionLambdaFunction"
               },
-              "CodeSha256": "smdQ6DYhCRT8QR0gGlKHYcaqcNCEz3+ThiBpqDCiNQk="
+              "CodeSha256": "nZhsFVfvOdyYzMo1ZqJO7Igas0nOmAO5mBCRgSMqZf8="
             }
           },
           "ApiGatewayRestApi": {
@@ -304,7 +304,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1608652067609": {
+          "ApiGatewayDeployment1608664675685": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -363,7 +363,7 @@
           "ArsenalMulticloudFunctionLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ArsenalMulticloudFunctionLambdaVersionoVVazFrEwSSXovb0x0PJSKkH29Sh1xNG3sYunlu9OSo"
+              "Ref": "ArsenalMulticloudFunctionLambdaVersiong3S8rngKTa56INph2HoN0BbKK4D3scYhm8S8j8oDx8"
             }
           },
           "ServiceEndpoint": {
@@ -497,7 +497,7 @@
         "timeout": 10,
         "runtime": "java8",
         "vpc": {},
-        "versionLogicalId": "ArsenalMulticloudFunctionLambdaVersionoVVazFrEwSSXovb0x0PJSKkH29Sh1xNG3sYunlu9OSo"
+        "versionLogicalId": "ArsenalMulticloudFunctionLambdaVersiong3S8rngKTa56INph2HoN0BbKK4D3scYhm8S8j8oDx8"
       }
     },
     "configValidationMode": "warn",
@@ -515,7 +515,7 @@
       },
       "package": {
         "artifact": "target/multicloud-function-0.0.1-SNAPSHOT.jar",
-        "artifactDirectoryName": "serverless/ArsenalMulticloudFunction/api/1608652068595-2020-12-22T15:47:48.595Z"
+        "artifactDirectoryName": "serverless/ArsenalMulticloudFunction/api/1608664676834-2020-12-22T19:17:56.834Z"
       },
       "functions": {
         "$ref": "$[\"service\"][\"functions\"]"
@@ -524,7 +524,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/ArsenalMulticloudFunction/api/1608652068595-2020-12-22T15:47:48.595Z",
+    "artifactDirectoryName": "serverless/ArsenalMulticloudFunction/api/1608664676834-2020-12-22T19:17:56.834Z",
     "artifact": "multicloud-function-0.0.1-SNAPSHOT.jar"
   }
 }

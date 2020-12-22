@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ArsenalHttpMessage {
 
-	private String method;
+	private HttpMethod method;
 	private HttpStatus status;
 	private Map<String, String> headers;
 	private String body;
@@ -17,7 +17,7 @@ public class ArsenalHttpMessage {
 		this.body = builder.body;
 	}
 			
-	public String getMethod() {
+	public HttpMethod getMethod() {
 		return method;
 	}
 	public HttpStatus getStatus() {
@@ -32,13 +32,13 @@ public class ArsenalHttpMessage {
 	
 	public static class Builder{
 		
-		private String method;
+		private HttpMethod method;
 		private HttpStatus status;
 		private Map<String, String> headers = new HashMap<String, String>();
 		private String body;
 		
-		public Builder(String method) {
-			this.method = method;
+		public Builder(HttpMethod httpMethod) {
+			this.method = httpMethod;
 		}
 		
 		public Builder(HttpStatus status) {

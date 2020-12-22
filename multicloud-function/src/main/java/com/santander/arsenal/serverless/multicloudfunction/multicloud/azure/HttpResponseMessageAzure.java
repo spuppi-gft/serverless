@@ -2,6 +2,8 @@ package com.santander.arsenal.serverless.multicloudfunction.multicloud.azure;
 
 import java.util.Optional;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.microsoft.azure.functions.ExecutionContext;
 import com.microsoft.azure.functions.HttpRequestMessage;
 import com.microsoft.azure.functions.HttpResponseMessage;
@@ -11,8 +13,11 @@ import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.Serverless;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.ArsenalHttpMessage;
+import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.HttpMethod;
 
 public class HttpResponseMessageAzure {
+	
+	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 	@FunctionName("ArsenalMulticloudFunction")
 	public HttpResponseMessage httpResponseMessage(@HttpTrigger(name = "ArsenalMulticloudFunction") 
@@ -21,7 +26,7 @@ public class HttpResponseMessageAzure {
 		context.getLogger().info("Java HTTP trigger processed a request.");
 
 		Serverless s = new Serverless();
-		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(request.getHttpMethod().name())
+		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(HttpMethod.value(request.getHttpMethod().name()))
 				.headers(request.getHeaders())
 				.body(request.getBody().get())
 				.build(), context);
