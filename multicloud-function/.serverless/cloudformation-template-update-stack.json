@@ -74,7 +74,7 @@
     "ArsenalMulticloudFunctionLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/ArsenalMulticloudFunctionSls-api-ArsenalMulticloudFunction"
+        "LogGroupName": "/aws/lambda/ArsenalMulticloudFunction-api-ArsenalMulticloudFunction"
       }
     },
     "IamRoleLambdaExecution": {
@@ -102,7 +102,7 @@
               "Fn::Join": [
                 "-",
                 [
-                  "ArsenalMulticloudFunctionSls",
+                  "ArsenalMulticloudFunction",
                   "api",
                   "lambda"
                 ]
@@ -119,7 +119,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/ArsenalMulticloudFunctionSls-api*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/ArsenalMulticloudFunction-api*:*"
                     }
                   ]
                 },
@@ -130,7 +130,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/ArsenalMulticloudFunctionSls-api*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/ArsenalMulticloudFunction-api*:*:*"
                     }
                   ]
                 },
@@ -164,7 +164,7 @@
           "Fn::Join": [
             "-",
             [
-              "ArsenalMulticloudFunctionSls",
+              "ArsenalMulticloudFunction",
               "api",
               {
                 "Ref": "AWS::Region"
@@ -182,9 +182,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/ArsenalMulticloudFunctionSls/api/1608573671276-2020-12-21T18:01:11.276Z/multicloud-function-0.0.1-SNAPSHOT.jar"
+          "S3Key": "serverless/ArsenalMulticloudFunction/api/1608652068595-2020-12-22T15:47:48.595Z/multicloud-function-0.0.1-SNAPSHOT.jar"
         },
-        "FunctionName": "ArsenalMulticloudFunctionSls-api-ArsenalMulticloudFunction",
+        "FunctionName": "ArsenalMulticloudFunction-api-ArsenalMulticloudFunction",
         "Handler": "com.santander.arsenal.serverless.multicloudfunction.multicloud.aws.HttpResponseMessageAws",
         "MemorySize": 1024,
         "Role": {
@@ -200,20 +200,20 @@
         "ArsenalMulticloudFunctionLogGroup"
       ]
     },
-    "ArsenalMulticloudFunctionLambdaVersionnc6FXfE9rSnyFWvnEuNbYsaU00GOkKx0y3J8dNTz3Ak": {
+    "ArsenalMulticloudFunctionLambdaVersionoVVazFrEwSSXovb0x0PJSKkH29Sh1xNG3sYunlu9OSo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ArsenalMulticloudFunctionLambdaFunction"
         },
-        "CodeSha256": "fk5ylBHzhjUKUj1b6WrcHvA/ZB/qW66eKfneRBjs6uU="
+        "CodeSha256": "smdQ6DYhCRT8QR0gGlKHYcaqcNCEz3+ThiBpqDCiNQk="
       }
     },
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
-        "Name": "ArsenalMulticloudFunctionSls-api",
+        "Name": "ArsenalMulticloudFunction-api",
         "EndpointConfiguration": {
           "Types": [
             "EDGE"
@@ -222,7 +222,7 @@
         "Policy": ""
       }
     },
-    "ApiGatewayResourceArsenalmulticloudfunctionsls": {
+    "ApiGatewayResourceArsenalmulticloudfunction": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
@@ -231,19 +231,19 @@
             "RootResourceId"
           ]
         },
-        "PathPart": "ArsenalMulticloudFunctionSls",
+        "PathPart": "ArsenalMulticloudFunction",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayMethodArsenalmulticloudfunctionslsPost": {
+    "ApiGatewayMethodArsenalmulticloudfunctionPost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "POST",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceArsenalmulticloudfunctionsls"
+          "Ref": "ApiGatewayResourceArsenalmulticloudfunction"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -280,7 +280,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1608573670253": {
+    "ApiGatewayDeployment1608652067609": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -289,7 +289,7 @@
         "StageName": "api"
       },
       "DependsOn": [
-        "ApiGatewayMethodArsenalmulticloudfunctionslsPost"
+        "ApiGatewayMethodArsenalmulticloudfunctionPost"
       ]
     },
     "ArsenalMulticloudFunctionLambdaPermissionApiGateway": {
@@ -339,7 +339,7 @@
     "ArsenalMulticloudFunctionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ArsenalMulticloudFunctionLambdaVersionnc6FXfE9rSnyFWvnEuNbYsaU00GOkKx0y3J8dNTz3Ak"
+        "Ref": "ArsenalMulticloudFunctionLambdaVersionoVVazFrEwSSXovb0x0PJSKkH29Sh1xNG3sYunlu9OSo"
       }
     },
     "ServiceEndpoint": {
