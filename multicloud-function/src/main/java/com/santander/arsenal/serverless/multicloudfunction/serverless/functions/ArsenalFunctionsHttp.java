@@ -9,7 +9,7 @@ import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.h
 @ArsenalFunctionController
 public class ArsenalFunctionsHttp {
 
-	@ArsenalFunction(name = "CadastrarUsuario", functionDefault = true, method = {HttpMethod.GET, HttpMethod.POST})
+	@ArsenalFunction(name = "CadastrarUsuario", defaultFunction = true, method = {HttpMethod.GET, HttpMethod.POST})
 	public ArsenalHttpMessage cadastrarUsuario (ArsenalHttpMessage request, Object context) {
 
 		System.out.println("Esta e a funcao multicloud - CadastrarUsuario");
@@ -28,7 +28,7 @@ public class ArsenalFunctionsHttp {
 				.build();
 	}
 
-	@ArsenalFunction(name = "AtualizarUsuario", functionDefault = false, method = {HttpMethod.PUT})
+	@ArsenalFunction(name = "AtualizarUsuario", defaultFunction = false, method = {HttpMethod.PUT})
 	public ArsenalHttpMessage atualizarUsuario (ArsenalHttpMessage request, Object context) {
 		
 		System.out.println("Esta e a funcao multicloud - AtualizarUsuario");
@@ -47,7 +47,7 @@ public class ArsenalFunctionsHttp {
 				.build();
 	}
 	
-	@ArsenalFunction(name = "CadastrarUsuario", functionDefault = true, method = {HttpMethod.DELETE})
+	@ArsenalFunction(name = "CadastrarUsuario", defaultFunction = true, method = {HttpMethod.DELETE})
 	public ArsenalHttpMessage deletarUsuario (ArsenalHttpMessage request, Object context) {
 
 		System.out.println("Esta e a funcao multicloud - DeletarUsuario");

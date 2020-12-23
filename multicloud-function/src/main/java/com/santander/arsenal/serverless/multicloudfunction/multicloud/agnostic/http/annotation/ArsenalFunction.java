@@ -13,5 +13,5 @@ public @interface ArsenalFunction {
 
 	String name();
 	HttpMethod[] method();
-	boolean functionDefault();
+	boolean defaultFunction();
 }

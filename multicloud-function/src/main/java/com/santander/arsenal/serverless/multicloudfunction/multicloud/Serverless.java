@@ -32,7 +32,7 @@ public class Serverless {
 					if(m.isAnnotationPresent((Class<? extends Annotation>) ArsenalFunction.class)){
 						//Se nao tiver especificado a @ArsenalFunction executar a function apontado como default
 						if(!request.getHeaders().containsKey("arsenal-function") && 
-								m.getAnnotation(ArsenalFunction.class).functionDefault()){
+								m.getAnnotation(ArsenalFunction.class).defaultFunction()){
 							response = m.invoke(cl.newInstance(), request, context);
 							break outerloop;
 						}else {
