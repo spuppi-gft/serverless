@@ -15,7 +15,7 @@ import com.santander.arsenal.serverless.multicloudfunction.multicloud.Serverless
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.ArsenalHttpMessage;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.HttpMethod;
 
-public class HttpResponseMessageAzure {
+public class HttpFunctionAzure {
 	
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -26,7 +26,7 @@ public class HttpResponseMessageAzure {
 		context.getLogger().info("Java HTTP trigger processed a request.");
 
 		Serverless s = new Serverless();
-		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(HttpMethod.value(request.getHttpMethod().name()))
+		ArsenalHttpMessage response = (ArsenalHttpMessage) s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(HttpMethod.value(request.getHttpMethod().name()))
 				.headers(request.getHeaders())
 				.body(request.getBody().get())
 				.build(), context);

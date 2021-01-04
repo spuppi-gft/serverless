@@ -10,7 +10,6 @@ import com.google.gson.GsonBuilder;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.Serverless;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.ArsenalHttpMessage;
 import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.HttpMethod;
-import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.http.HttpStatus;
 
 @SpringBootApplication
 public class MulticloudFunctionApplication {
@@ -33,7 +32,7 @@ public class MulticloudFunctionApplication {
 		//				.body("body")
 		//				.build(), null);
 
-		ArsenalHttpMessage response = s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(HttpMethod.DELETE)
+		ArsenalHttpMessage response = (ArsenalHttpMessage) s.ArsenalFunctionScan(new ArsenalHttpMessage.Builder(HttpMethod.DELETE)
 				.header("key", "value")
 				.body("body")
 				.build(), null);

@@ -11,7 +11,5 @@ import com.santander.arsenal.serverless.multicloudfunction.multicloud.agnostic.h
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ArsenalFunction {
 
-	String name();
-	HttpMethod[] method();
-	boolean defaultFunction();
+	HttpMethod[] method() default {};
 }
